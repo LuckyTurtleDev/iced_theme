@@ -1,9 +1,9 @@
 [package]
-name = "styling"
-version = "0.1.0"
-authors = ["Héctor Ramón Jiménez <hector0193@gmail.com>"]
+workspace = ".."
+name = "iced_theme"
+version = "0.0.0"
 edition = "2018"
 publish = false
 
 [dependencies]
-iced = { path = "../.." }
+iced = { version = "0.3", features = ["glow", "glow_default_system_font"], default-features = false }
