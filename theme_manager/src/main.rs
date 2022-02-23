@@ -19,7 +19,7 @@ impl Sandbox for Window {
 	}
 
 	fn title(&self) -> String {
-		String::from("rusty-vocabulary")
+		String::from("Iced Theme Manager")
 	}
 
 	fn update(&mut self, message: Self::Message) {}
