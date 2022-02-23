@@ -6,3 +6,5 @@ edition = "2021"
 publish = false
 
 [dependencies]
+iced = { version = "0.3", features = ["glow", "glow_default_system_font"], default-features = false }
+typetest_themes = "1.0.0"
