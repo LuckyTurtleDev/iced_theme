@@ -1,8 +1,6 @@
 pub mod select;
 use super::Window;
 
-
-
 #[derive(Debug, Clone)]
 pub enum Message {}
 

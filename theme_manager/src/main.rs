@@ -25,16 +25,9 @@ impl Sandbox for Window {
 	fn update(&mut self, message: Self::Message) {}
 
 	fn view(&mut self) -> Element<Self::Message> {
-		let content: Element<Self::Message> = match self.activity {
+		match self.activity {
 			Activity::Select => activitys::select::view(self),
-		};
-		Container::new(content)
-			.width(Length::Fill)
-			.height(Length::Fill)
-			.center_x()
-			.center_y()
-			.style(&typetest_themes::Theme::DefaultDark.into())
-			.into()
+		}
 	}
 }
 
