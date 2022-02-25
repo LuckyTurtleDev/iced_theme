@@ -1,11 +1,12 @@
 use iced::{Container, Element, Length, Sandbox, Settings};
+use iced_theme::{theme, theme::Theme};
 
 mod activitys;
 use activitys::{Activity, Message};
 
 pub struct Window {
 	activity: Activity,
-	theme: Box<dyn typetest_themes::ApplicationTheme>,
+	theme: Theme,
 }
 
 impl Sandbox for Window {
@@ -13,7 +14,7 @@ impl Sandbox for Window {
 
 	fn new() -> Window {
 		Window {
-			theme: typetest_themes::Theme::DefaultDark.into(),
+			theme: Theme::default(),
 			activity: Activity::Select,
 		}
 	}
