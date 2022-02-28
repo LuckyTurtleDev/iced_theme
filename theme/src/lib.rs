@@ -38,7 +38,7 @@ pub mod theme {
 		}
 	}
 
-	impl container::StyleSheet for Theme {
+	impl container::StyleSheet for &Theme {
 		fn style(&self) -> container::Style {
 			container::Style {
 				background: self.colors.background.into(),
@@ -52,6 +52,7 @@ pub mod theme {
 		fn active(&self) -> radio::Style {
 			radio::Style {
 				background: self.colors.surface.into(),
+				text_color: Some(self.colors.text),
 				dot_color: self.colors.active,
 				border_width: 1.0,
 				border_color: self.colors.active,
@@ -240,6 +241,7 @@ pub mod theme {
 		fn active(&self, is_checked: bool) -> checkbox::Style {
 			checkbox::Style {
 				background: if is_checked { self.colors.active } else { self.colors.surface }.into(),
+				text_color: Some(self.colors.text),
 				checkmark_color: self.colors.text,
 				border_radius: 2.0,
 				border_width: 1.0,
