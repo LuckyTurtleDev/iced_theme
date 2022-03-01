@@ -38,13 +38,19 @@ pub mod theme {
 		}
 	}
 
-	impl container::StyleSheet for &Theme {
+	impl container::StyleSheet for ThemeColors {
 		fn style(&self) -> container::Style {
 			container::Style {
-				background: self.colors.background.into(),
-				text_color: Some(self.colors.text),
+				background: self.background.into(),
+				text_color: Some(self.text),
 				..container::Style::default()
 			}
+		}
+	}
+
+	impl<'a> From<&Theme> for Box<dyn container::StyleSheet + 'a> {
+		fn from(theme: &Theme) -> Self {
+			theme.colors.clone().into()
 		}
 	}
 

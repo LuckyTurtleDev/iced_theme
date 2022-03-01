@@ -10,7 +10,7 @@ where
 		.height(Length::Fill)
 		.center_x()
 		.center_y()
-//		.style(&win.theme)
+		.style(&win.theme)
 		.into()
 }
 
