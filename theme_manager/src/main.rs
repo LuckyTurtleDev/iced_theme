@@ -1,5 +1,5 @@
-use iced::{Container, Element, Length, Sandbox, Settings};
-use iced_theme::{theme, theme::Theme};
+use iced::{Element, Sandbox, Settings};
+use iced_theme::theme::Theme;
 
 mod activitys;
 use activitys::{Activity, Message};
